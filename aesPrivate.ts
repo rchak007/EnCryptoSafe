@@ -1,3 +1,35 @@
+// how to run - dont use "" when you supply the words
+
+// (base) $ tsc aes.ts
+// (base) $ node aes.js
+// Choose an option:
+// 1. Decrypt an encrypted Base64 string
+//    Example: "gPinvU4XdB/S0Yv8AMWk4P7C3KaSQ5aIdgUNTY6FfSQ="
+// 2. Encrypt a plaintext string to Base64
+//    Example: "plug example hello current"
+// Enter 1 or 2: 1
+// Enter the Base64 encrypted string to decrypt: gPinvU4XdB/S0Yv8AMWk4P7C3KaSQ5aIdgUNTY6FfSQ=
+// Decrypted (utf8): plug example hello current
+// (base) $ node aes.js
+// Choose an option:
+// 1. Decrypt an encrypted Base64 string
+//    Example: "gPinvU4XdB/S0Yv8AMWk4P7C3KaSQ5aIdgUNTY6FfSQ="
+// 2. Encrypt a plaintext string to Base64
+//    Example: "plug example hello current"
+// Enter 1 or 2: 2
+// Enter the plaintext string to encrypt: "plug example hello current"
+// Encrypted (Base64): sHtvsDUyVdyvxUdHMaXd1zVwar1JOq/kPQmZRP80Hes=
+// (base) $ node aes.js
+// Choose an option:
+// 1. Decrypt an encrypted Base64 string
+//    Example: "gPinvU4XdB/S0Yv8AMWk4P7C3KaSQ5aIdgUNTY6FfSQ="
+// 2. Encrypt a plaintext string to Base64
+//    Example: "plug example hello current"
+// Enter 1 or 2: 2
+// Enter the plaintext string to encrypt: plug example hello current
+// Encrypted (Base64): gPinvU4XdB/S0Yv8AMWk4P7C3KaSQ5aIdgUNTY6FfSQ=
+// (base) $
+
 // import crypto from "crypto";
 import * as crypto from "crypto";
 // import dotenv from "dotenv";

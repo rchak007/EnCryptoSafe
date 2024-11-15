@@ -1,0 +1,412 @@
+<!-- npm run build -->
+<!-- node dist/server.js  -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Crypto Seedphrase Encryption Service</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <style>
+      #myCarousel .carousel-inner {
+        height: 900px; /* Adjust this value as needed */
+      }
+      #myCarousel .carousel-item {
+        height: 100%;
+        /* background-color: white; */
+      }
+      .carousel-control-prev-icon,
+      .carousel-control-next-icon {
+        background-color: black; /* Change the color to black */
+      }
+
+      /* Align all carousel indicators consistently */
+      .carousel-indicators {
+        display: flex;
+        justify-content: center;
+        align-items: center; /* Center align indicators vertically */
+        margin-bottom: 10px; /* Adjust this value as needed */
+      }
+
+      /* Style for inactive indicators */
+      .carousel-indicators button {
+        background-color: grey !important; /* Ensure grey color for inactive dots */
+        border: none; /* Remove any border that might override the color */
+        opacity: 1; /* Ensure full visibility */
+        margin: 0 5px; /* Add horizontal spacing between dots */
+      }
+
+      /* Style for the active indicator */
+      .carousel-indicators .active {
+        background-color: black !important; /* Ensure active dot is black */
+        border: none; /* Remove any border */
+        opacity: 1; /* Ensure full visibility */
+      }
+      .card-title1 {
+        color: blue;
+      }
+      .card-title2 {
+        color: greenyellow;
+      }
+      .card-title3 {
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">EnCryptoSafe</a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarCollapse"
+            aria-controls="navbarCollapse"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav me-auto mb-2 mb-md-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+              </li>
+            </ul>
+            <form class="d-flex" role="search">
+              <input
+                class="form-control me-2"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <button class="btn btn-outline-success" type="submit">
+                Search
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- Carousel -->
+    <div
+      id="myCarousel"
+      class="carousel slide mb-6 pointer-event"
+      data-bs-ride="carousel"
+    >
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#myCarousel"
+          data-bs-slide-to="0"
+          class="active"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#myCarousel"
+          data-bs-slide-to="1"
+          aria-current="true"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#myCarousel"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <svg
+            class="bd-placeholder-img"
+            width="100%"
+            height="100%"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+            preserveAspectRatio="xMidYMid slice"
+            focusable="false"
+            style="background-color: white"
+          >
+            <rect width="100%" height="100%" fill="white"></rect>
+          </svg>
+          <div class="container">
+            <div class="carousel-caption text-start" style="color: black">
+              <h1 style="margin-top: 5px">
+                Secure Your Seed Phrases with Confidence
+              </h1>
+              <p class="opacity-75" style="margin-bottom: 0">
+                Say goodbye to the stress of storing seed phrases directly. With
+                our advanced encryption service, you can safely store your
+                encrypted keys in the cloud, ensuring peace of mind and top-tier
+                security. Split your seed phrase into 3 sets of words - Example-
+                if you have 12 word seed phrase then split into 3 sets of 4
+                words each and encrypt each set separately. Then store each of
+                your 3 sets - your AES key, AES Vector and Encrypted key of your
+                seed phrase in different regular Cloud accounts where you can
+                safely recover. Multi-factor your Cloud accounts. Keep your AES
+                key and vector separately from Encrypted keys.
+              </p>
+              <p style="color: Blue">
+                Even if these encrypted keys are hacked they cannot recover any
+                seed phrase w/o the AES key and Vector and even then they have
+                only 1/3rd of the words!!
+              </p>
+              <img
+                src="relaxBeach3.png"
+                alt="Relax by the Beach"
+                class="img-fluid mt-3"
+                style="
+                  transform: scale(0.8);
+                  display: block;
+                  margin: 0 auto;
+                  margin-top: 10px;
+                "
+              />
+              <p>
+                <a class="btn btn-lg btn-primary" href="#encryptDecryptSection"
+                  >Let's Go !!</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="carousel-item"
+          style="background-color: white; color: black"
+        >
+          <svg
+            class="bd-placeholder-img"
+            width="100%"
+            height="100%"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+            preserveAspectRatio="xMidYMid slice"
+            focusable="false"
+            style="background-color: white"
+          >
+            <rect width="100%" height="100%" fill="white"></rect>
+          </svg>
+          <div class="container">
+            <div class="carousel-caption text-start" style="color: black">
+              <h1 style="margin-top: 5px">Demo Video</h1>
+              <!-- <p class="opacity-75 mt-1" style="margin-bottom: 0">
+                
+              </p> -->
+              <video
+                src="EnCryptoSafe2024-11-08 17-36-06.mkv"
+                alt="Demo video showing secure storage process"
+                class="img-fluid mt-3"
+                style="
+                  transform: scale(0.9);
+                  display: block;
+                  margin: 5px auto 0 auto;
+                "
+                controls
+              ></video>
+              <p>
+                <a class="btn btn-lg btn-primary" href="#encryptDecryptSection"
+                  >Let's Go !!</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="carousel-item"
+          style="background-color: #f8f9fa; color: blue"
+        >
+          <div class="container">
+            <div
+              class="carousel-caption text-center"
+              style="color: #333; top: 20%"
+            >
+              <h1 class="display-6 mb-4">
+                Best Practices for Securing Your Seed Phrase
+              </h1>
+              <div class="row justify-content-center">
+                <!-- Step 1 -->
+                <div class="col-md-3">
+                  <div class="card border-0 shadow-sm mb-3">
+                    <div class="card-body">
+                      <h5 class="card-title card-title1">Step 1</h5>
+                      <h6 class="card-subtitle card-title1 mb-2 text-muted">
+                        Secure AES Key & Vector
+                      </h6>
+                      <p class="card-text">
+                        Store these in a primary cloud account (e.g., Google or
+                        Apple), and choose complex, password-like values.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="col-md-3">
+                  <div class="card border-0 shadow-sm mb-3">
+                    <div class="card-body">
+                      <h5 class="card-title card-title2">Step 2</h5>
+                      <h6 class="card-subtitle card-title2 mb-2 text-muted">
+                        Divide & Encrypt
+                      </h6>
+                      <p class="card-text">
+                        Encrypt smaller parts of your seed phrase, and store
+                        each encrypted segment in a separate cloud account.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="col-md-3">
+                  <div class="card border-0 shadow-sm mb-3">
+                    <div class="card-body">
+                      <h5 class="card-title card-title3">Step 3</h5>
+                      <h6 class="card-subtitle card-title3 mb-2 text-muted">
+                        Enable Multi-Factor Authentication
+                      </h6>
+                      <p class="card-text">
+                        Add MFA to all your cloud accounts to secure access and
+                        reduce unauthorized access risks.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#myCarousel"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#myCarousel"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <div id="encryptDecryptSection" class="container mt-5">
+      <h1 class="text-center">
+        Crypto Seed Phrase Encryption/Decryption Service
+      </h1>
+      <form id="encryption-form" class="mb-4">
+        <h3>Encryption</h3>
+        <div class="mb-3">
+          <label for="key" class="form-label"
+            >AES Key (16 bytes) (something personal like password) - Example
+            Tesla-ARK-NVDA12</label
+          >
+          <input type="text" id="key" class="form-control" required />
+        </div>
+        <div class="mb-3">
+          <label for="iv" class="form-label"
+            >AES IV (16 bytes) (something personal like password) - Example
+            LoveFlowerGarden</label
+          >
+          <input type="text" id="iv" class="form-control" required />
+        </div>
+        <div class="mb-3">
+          <label for="plaintext" class="form-label"
+            >Seed Phrase - example - plug example hello current</label
+          >
+          <input type="text" id="plaintext" class="form-control" required />
+        </div>
+        <button type="button" class="btn btn-primary" onclick="encrypt()">
+          Encrypt
+        </button>
+        <div class="mt-3">
+          <label for="encrypted-output" class="form-label"
+            >Encrypted Output (Base64) - example
+            gPinvU4XdB/S0Yv8AMWk4P7C3KaSQ5aIdgUNTY6FfSQ=
+          </label>
+          <textarea
+            id="encrypted-output"
+            class="form-control"
+            readonly
+          ></textarea>
+        </div>
+      </form>
+
+      <form id="decryption-form">
+        <h3>Decryption</h3>
+        <div class="mb-3">
+          <label for="encrypted" class="form-label"
+            >Encrypted Input (Base64)</label
+          >
+          <input type="text" id="encrypted" class="form-control" required />
+        </div>
+        <button type="button" class="btn btn-secondary" onclick="decrypt()">
+          Decrypt
+        </button>
+        <div class="mt-3">
+          <label for="decrypted-output" class="form-label"
+            >Decrypted Output (Plaintext)</label
+          >
+          <textarea
+            id="decrypted-output"
+            class="form-control"
+            readonly
+          ></textarea>
+        </div>
+      </form>
+    </div>
+
+    <script>
+      async function encrypt() {
+        const key = document.getElementById("key").value;
+        const iv = document.getElementById("iv").value;
+        const plaintext = document.getElementById("plaintext").value;
+
+        const response = await fetch("/encrypt", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ key, iv, plaintext }),
+        });
+        const result = await response.json();
+        document.getElementById("encrypted-output").value =
+          result.encrypted || result.error;
+      }
+
+      async function decrypt() {
+        const key = document.getElementById("key").value;
+        const iv = document.getElementById("iv").value;
+        const encrypted = document.getElementById("encrypted").value;
+
+        const response = await fetch("/decrypt", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ key, iv, encrypted }),
+        });
+        const result = await response.json();
+        document.getElementById("decrypted-output").value =
+          result.decrypted || result.error;
+      }
+    </script>
+  </body>
+</html>

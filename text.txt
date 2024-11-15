@@ -1,0 +1,9 @@
+
+Store these 2 - AES Key and AES Vector in Cloud account 1. Ex Google or apple cloud.
+Make sure these 2 are not too simple but like passwords.
+
+Store the encrypted seed phrase words on another differnt cloud account. 
+Ex. 12 words - run this encryption 4 words at a time so you will get 3 encrypted keys.
+Store each on different Google/Apple cloud accounts.
+
+Turn on Multi-Factor Authentications for all your cloud accounts.
