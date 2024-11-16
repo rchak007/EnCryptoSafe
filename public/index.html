@@ -1,6 +1,3 @@
-<!-- npm run build -->
-<!-- node dist/server.js  -->
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -378,16 +375,32 @@
     </div>
 
     <script>
+      // const API_URL =
+      //   window.location.hostname === "localhost"
+      //     ? "http://localhost:3000/api/encrypt-decrypt"
+      //     : "/api/encrypt-decrypt";
+      const API_URL =
+        window.location.hostname === "localhost"
+          ? "http://localhost:3000" // Local server route
+          : "/api"; // Vercel's serverless function route
+
       async function encrypt() {
         const key = document.getElementById("key").value;
         const iv = document.getElementById("iv").value;
         const plaintext = document.getElementById("plaintext").value;
 
-        const response = await fetch("/encrypt", {
+        // const response = await fetch("/encrypt", {
+        //   method: "POST",
+        //   headers: { "Content-Type": "application/json" },
+        //   body: JSON.stringify({ key, iv, plaintext }),
+        // });
+        const response = await fetch(`${API_URL}/encrypt`, {
+          // const response = await fetch(API_URL, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ key, iv, plaintext }),
         });
+
         const result = await response.json();
         document.getElementById("encrypted-output").value =
           result.encrypted || result.error;
@@ -398,11 +411,19 @@
         const iv = document.getElementById("iv").value;
         const encrypted = document.getElementById("encrypted").value;
 
-        const response = await fetch("/decrypt", {
+        // const response = await fetch("/decrypt", {
+        //   method: "POST",
+        //   headers: { "Content-Type": "application/json" },
+        //   body: JSON.stringify({ key, iv, encrypted }),
+        // });
+
+        const response = await fetch(`${API_URL}/decrypt`, {
+          // const response = await fetch(API_URL, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ key, iv, encrypted }),
         });
+
         const result = await response.json();
         document.getElementById("decrypted-output").value =
           result.decrypted || result.error;

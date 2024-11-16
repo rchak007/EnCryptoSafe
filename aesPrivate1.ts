@@ -3,8 +3,8 @@
 // aesPrivate1 - we are trying to now encrypt a private key. Before we did seed phrase which was text and it worked.
 // but not working if its private key -
 
-// (base) $ tsc aes.ts
-// (base) $ node aes.js
+// (base) $ tsc aesPrivate1.ts
+// (base) $ node aesPrivate1.js
 // Choose an option:
 // 1. Decrypt an encrypted Base64 string
 //    Example: "gPinvU4XdB/S0Yv8AMWk4P7C3KaSQ5aIdgUNTY6FfSQ="
