@@ -384,6 +384,11 @@
           ? "http://localhost:3000" // Local server route
           : "/api"; // Vercel's serverless function route
 
+      const ENDPOINT =
+        window.location.hostname === "localhost"
+          ? "/encrypt" // Local server route
+          : "/encrypt_decrypt"; // Vercel's serverless function route
+
       async function encrypt() {
         const key = document.getElementById("key").value;
         const iv = document.getElementById("iv").value;
@@ -394,7 +399,13 @@
         //   headers: { "Content-Type": "application/json" },
         //   body: JSON.stringify({ key, iv, plaintext }),
         // });
-        const response = await fetch(`${API_URL}/encrypt`, {
+        const ENDPOINT =
+          window.location.hostname === "localhost"
+            ? "/encrypt" // Local server route
+            : "/encrypt_decrypt"; // Vercel's serverless function route
+
+        // const response = await fetch(`${API_URL}/encrypt`, {
+        const response = await fetch(`${API_URL}${ENDPOINT}`, {
           // const response = await fetch(API_URL, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
@@ -417,7 +428,13 @@
         //   body: JSON.stringify({ key, iv, encrypted }),
         // });
 
-        const response = await fetch(`${API_URL}/decrypt`, {
+        const ENDPOINT =
+          window.location.hostname === "localhost"
+            ? "/decrypt" // Local server route
+            : "/encrypt_decrypt"; // Vercel's serverless function route
+
+        // const response = await fetch(`${API_URL}/decrypt`, {
+        const response = await fetch(`${API_URL}${ENDPOINT}`, {
           // const response = await fetch(API_URL, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
