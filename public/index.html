@@ -402,7 +402,7 @@
         const ENDPOINT =
           window.location.hostname === "localhost"
             ? "/encrypt" // Local server route
-            : "/encrypt_decrypt"; // Vercel's serverless function route
+            : "/encrypt-decrypt"; // Vercel's serverless function route
 
         // const response = await fetch(`${API_URL}/encrypt`, {
         const response = await fetch(`${API_URL}${ENDPOINT}`, {
@@ -431,7 +431,7 @@
         const ENDPOINT =
           window.location.hostname === "localhost"
             ? "/decrypt" // Local server route
-            : "/encrypt_decrypt"; // Vercel's serverless function route
+            : "/encrypt-decrypt"; // Vercel's serverless function route
 
         // const response = await fetch(`${API_URL}/decrypt`, {
         const response = await fetch(`${API_URL}${ENDPOINT}`, {
