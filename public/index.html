@@ -340,7 +340,7 @@
         <div class="mt-3">
           <label for="encrypted-output" class="form-label"
             >Encrypted Output (Base64) - example
-            gPinvU4XdB/S0Yv8AMWk4P7C3KaSQ5aIdgUNTY6FfSQ=
+            BWesgbNsLxMcJ18/FTmT3ExIrcekbATlfGfXfEpJcmE=
           </label>
           <textarea
             id="encrypted-output"
@@ -394,6 +394,12 @@
         const iv = document.getElementById("iv").value;
         const plaintext = document.getElementById("plaintext").value;
 
+        // Validate key and IV
+        if (!key || !iv) {
+          alert("AES Key and IV cannot be blank.");
+          return;
+        }
+
         // const response = await fetch("/encrypt", {
         //   method: "POST",
         //   headers: { "Content-Type": "application/json" },
@@ -421,6 +427,12 @@
         const key = document.getElementById("key").value;
         const iv = document.getElementById("iv").value;
         const encrypted = document.getElementById("encrypted").value;
+
+        // Validate key and IV
+        if (!key || !iv) {
+          alert("AES Key and IV cannot be blank.");
+          return;
+        }
 
         // const response = await fetch("/decrypt", {
         //   method: "POST",
