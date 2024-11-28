@@ -10,16 +10,68 @@
     />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <style>
-      #myCarousel .carousel-inner {
-        height: 900px; /* Adjust this value as needed */
+      /* #myCarousel .carousel-inner {
+              height: 900px;  }  /* Adjust this value as needed */
+
+      html,
+      body {
+        height: 100%; /* Ensure the root elements have full height */
       }
+
+      #myCarousel {
+        height: calc(
+          100vh - 56px
+        ); /*100vh; Make the carousel occupy full viewport height */
+        padding-top: 56px; /* Avoid overlap with fixed navbar */
+      }
+
+      @media (max-width: 768px) {
+        #myCarousel {
+          height: 80vh; /* Adjust height for smaller screens */
+        }
+      }
+
+      #myCarousel .carousel-inner {
+        height: 100%; /* Full height relative to parent */
+      }
+      @media (max-width: 768px) {
+        #myCarousel .carousel-inner {
+          height: 70vh; /* Adjust height for smaller screens */
+        }
+      }
+
+
+
       #myCarousel .carousel-item {
         height: 100%;
         /* background-color: white; */
       }
+
+      .carousel-item:first-child .carousel-caption {
+        top: 5%; /* Adjust caption position for the first slide */
+      }
+      @media (max-width: 768px) {
+        .carousel-item:first-child .carousel-caption {
+          top: 5%; /* Adjust for smaller screens */
+        }
+      }
       .carousel-control-prev-icon,
       .carousel-control-next-icon {
         background-color: black; /* Change the color to black */
+      }
+      /* Specific styles for the fourth carousel slide */
+      /* .carousel-item:nth-child(4) .carousel-caption {
+        top: 10%; /* Move caption closer to the top */
+      /* position: absolute; /* Ensure positioning is controlled */
+      /*  transform: none; }/* Remove default transform applied by Bootstrap */
+
+      .carousel-item:nth-child(4) .carousel-caption {
+        top: 10%;
+      }
+      @media (max-width: 768px) {
+        .carousel-item:nth-child(4) .carousel-caption {
+          top: 5%;
+        }
       }
 
       /* Align all carousel indicators consistently */
@@ -27,7 +79,7 @@
         display: flex;
         justify-content: center;
         align-items: center; /* Center align indicators vertically */
-        margin-bottom: 10px; /* Adjust this value as needed */
+        /* margin-bottom: 10px; */ /* Adjust this value as needed */
       }
 
       /* Style for inactive indicators */
@@ -104,7 +156,8 @@
       class="carousel slide mb-6 pointer-event"
       data-bs-ride="carousel"
     >
-      <div class="carousel-indicators">
+    <!-- <div class="carousel-indicators"> -->
+      <div class="carousel-indicators mb-2 mb-md-4">
         <button
           type="button"
           data-bs-target="#myCarousel"
@@ -125,6 +178,13 @@
           data-bs-slide-to="2"
           aria-label="Slide 3"
         ></button>
+        <button
+          type="button"
+          data-bs-target="#myCarousel"
+          data-bs-slide-to="3"
+          aria-label="Slide 4"
+        ></button>
+        <!-- New indicator -->
       </div>
       <div class="carousel-inner">
         <div class="carousel-item active">
@@ -284,6 +344,75 @@
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <svg
+            class="bd-placeholder-img"
+            width="100%"
+            height="100%"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+            preserveAspectRatio="xMidYMid slice"
+            focusable="false"
+            style="background-color: white"
+          >
+            <rect width="100%" height="100%" fill="white"></rect>
+          </svg>
+          <div class="container">
+            <div class="carousel-caption text-start" style="color: black">
+              <h1 style="margin-bottom: 40px">
+                Why You Can Trust EnCryptoSafe
+              </h1>
+              <h4 style="margin-top: 1px">
+                Assurance for Decryption Without This Website
+              </h4>
+              <p class="opacity-75" style="margin-bottom: 5px">
+                Rest easy knowing your encrypted keys are fully secure and
+                accessible, even if this website is unavailable in the future.
+                You can easily decrypt your keys using trusted online tools like
+                JavaInUse AES Generator or Devglan AES Encryption/Decryption
+                Tool. Since your encryption key and initialization vector (IV)
+                are unique to you, no one else can decrypt your data, ensuring
+                your seed phrases remain in your control—always.
+              </p>
+              <p style="margin-bottom: 40px">
+                You can easily decrypt your keys using trusted online tools like
+                <a
+                  href="https://www.javainuse.com/aesgenerator"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  JavaInUse AES Generator
+                </a>
+                or
+                <a
+                  href="https://www.devglan.com/online-tools/aes-encryption-decryption"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Devglan AES Encryption/Decryption Tool </a
+                >. 
+                <p>Please go ahead and decrypt from these sites too to test it out and keep these links too.</p>
+              </p>
+              <h4 style="margin-top: 1px">
+                Transparency and Open-Source Commitment
+              </h4>
+              <p style="color: black; margin-bottom: 40px">
+                "We believe in complete transparency. This website’s entire
+                source code is available in our open GitHub repository. To
+                provide further assurance, we demonstrate that this website is
+                hosted on Vercel directly from the same repository, proving
+                there’s no hidden processing or storage of your seed phrases.
+                Our mission is to give you peace of mind—encryption without
+                compromise."
+              </p>
+
+              <a class="btn btn-lg btn-primary" href="#encryptDecryptSection"
+                >Let's Go !!</a
+              >
             </div>
           </div>
         </div>
